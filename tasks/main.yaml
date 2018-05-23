@@ -1,0 +1,12 @@
+---
+- name: installing chrony
+  include: chrony.yaml
+
+- name: installing openstack
+  include: openstack_packages.yaml
+
+- name: installing mariabd
+  include: mariadb.yaml
+
+- name: installing rabbitmq
+  include: rabbitmq.yaml

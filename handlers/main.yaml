@@ -1,0 +1,13 @@
+---
+- name: start chrony
+  service:
+    name: chronyd
+    state: restarted
+- name: mariadb
+  service:
+    name: mariadb
+    state: restarted
+- name: rabbitmq service
+  service:
+    name: rabbitmq-server
+    state: restarted

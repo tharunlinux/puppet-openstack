@@ -1,0 +1,13 @@
+---
+- name: install mariadb
+  yum:
+    name: "{{ item }}"
+  with_items:
+    - mariadb
+    - mariadb-server
+    - python2-PyMySQL
+- name: change config file
+  template:
+    src: openstack.cnf.j2
+    dest: /etc/my.cnf.d/openstack.cnf
+  notify: mariadb

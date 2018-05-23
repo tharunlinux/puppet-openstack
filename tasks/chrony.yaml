@@ -1,0 +1,11 @@
+---
+- name: install chrony
+  yum:
+    name: chrony
+    state: installed
+    update_cache: yes
+- name: change config file
+  template:
+    src: chrony.conf.j2
+    dest: /etc/chrony.conf
+  notify: start chrony
